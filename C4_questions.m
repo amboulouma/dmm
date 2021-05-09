@@ -22,28 +22,6 @@ P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 figure('Name','No reaction: Economic time paths');
 plot_path(P,k,c,l,T);
 
-
-
-% compare to C2
-%   short-term:  initially, consumption drops more as containment measures
-%                (consumption taxes) are very high in the beginning 
-%                this spurs savings and leads to a faster short-term
-%                increase in capital
-%   medium-term: the maximum drop in consumption is less because the rising
-%                capital partly offsets the shrinking labor supply
-%                as a result of higher savings both in the short and in the
-%                medium term, the capital stock drops less
-%   long-term:   the recovery is faster because capital did not drop as
-%                much at the peak of the recession
-
-% (b) optimal value of b
-
-% to maximize household utility, b should be set to approximately 0.05
-% the optimal policy from C3 attains higher household utility and should be
-% prefered
-
-% (c)
-
 T = 150;
 P.phi = 1;
 P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
@@ -80,6 +58,6 @@ ylabel('household utility U(c*)');
 
 [Umax,imax] = max(Ugrid);
 P.phi_max = phigrid(imax);
-fprintf('phi_max = %4.4f\tUmax = %4.6f\n',P.phi_max,Umax);
+fprintf('phi_max = %4.4f\tUmax = %4.4f\n',P.phi_max,Umax);
 
 end

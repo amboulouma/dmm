@@ -33,20 +33,4 @@ title('Labor');
 xlabel('time');
 ylim([0,1]);
 
-% (c) report observations
-%   short-term:  households anticipate that production and income will
-%                decrease in the future; to smooth consumption over the
-%                recessionary period, they immediately consume less and
-%                save more, which increases the capital stock
-%   medium-term: even though the higher capital allows more production,
-%                due to quickly rising number of infections, labor supply
-%                drops, so that less is produced => household income dreases
-%                => less can be spent on consumption and savings => capital
-%                stock eventually starts to decrease
-%   long-term:   as the epidemic fades out, production increases again,
-%                thereby increasing consumption and savings; it takes
-%                economy ~80 periods to get back to steady state even
-%                though epidemic already ends after 50 periods after about
-%                80% of the population are infecte
-
 end

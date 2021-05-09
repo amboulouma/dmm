@@ -5,5 +5,4 @@ function P = C5_questions(P)
 
 P.gamma = 0.01;
 
-
 end
