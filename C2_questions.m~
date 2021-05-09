@@ -33,11 +33,8 @@ xlabel('time');
 ylim([0,1]);
 
 % (c)
-% short term (<20 periods): Increase of capital, decrease of labor,
-% decrease in consumption, 
-% medium-term effects (20–50 periods): Recession of capital, increase of
-% labor, increase in consumption, 
-% long-term ef- fects (>50 periods): Correction of capital to steady state,
-% correction of labor to steady state, correction of labor to steady state
+% short term(<20 periods): Increase of capital
+% medium-term effects (20–50 periods): Recession of capital,
+% long-term ef- fects (>50 periods): Correctio
 
 end
