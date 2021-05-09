@@ -1,16 +1,18 @@
-%% C4. 
+%% C4. Uncertainty about the willingness of symptomatic and identified asymtomatic individuals to reduce their contacts
 function P = C4_questions(P)
 
 T = 200;
 P.k0 = P.kss;
 P.i0 = 0.01;
 
-% (a) analysis for lambda = 0.4
+% C4(a) Checking the robustness by analysis for lambda = 0.4
 P.lambda = 0.4;
 
 P.phi = 0;
 P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 [c,k,i,s,l] = compute_path(P,T);
+
+% Plotting and comparing the equilibrium time paths of consumption, capital and labor
 
 figure('Name','Phi = 0, Lambda = 0.4: Trajectory plot');
 plot_traj(P,k,c);
