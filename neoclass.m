@@ -22,7 +22,7 @@ P = pars(P);
 %   rss: 0.0508
 %   sss: 1
 
-% C1. Compute seady state
+% C1. Computing the intital steady state of consumption, capital, labor and reporting steady state for wage and rental rate of capital.
 P = stst(P);
 
 % A3
@@ -35,10 +35,10 @@ P
 %% C3. Containment measures linked to number of infected
 % P = C3_questions(P);
 P
-%% C4. Containment measures linked to number of susceptibles
+%% C4. Containment measures linked to number of susceptibles. Checking the robustness of C3 by changing lambda.
 P = C4_questions(P);
 P
-%% C5. Willingness to pay for a cure
+%% C5. Willingness to pay for a cure and output for testing purposes.
 % C5_Analysis(P);
 
 
