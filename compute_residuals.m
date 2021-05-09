@@ -24,6 +24,7 @@ function res = compute_residuals(P,T,X)
     res_ct = P.du(c(now)) - P.beta*(1+P.FK(k(next),1 - (1 - (1 - P.phi)*P.a)*i(now))-P.delta).*P.du(c(next));
     % all capital accumulation equations:
     res_kt = (1-P.delta)*k(now) + P.F(k(now),1 - (1 - (1 - P.phi)*P.a)*i(now)) - c(now) - k(next);
+    
     % Number of infections
     Nt = P.pi_s*(P.lambda + (1-P.lambda)*(1-P.phi)*P.a)*i(now).*s(now);
     % Infection equations
@@ -43,9 +44,10 @@ function res = compute_residuals(P,T,X)
     res_i0 = i(1) - P.i0;
     res_s0 = s(1) - (1-P.i0);                     % because s0 = 1-i0
     res_l0 = l(1) -  (1 - (1 - (1 - P.phi)*P.a)*i(1));
-     % one terminal condition
+     % two terminal condition
     res_cT = c(end) - P.css;   
+    res_kT = k(end) - P.kss;
     % add initial and terminal conditions (conditions must be ordered by period!)
-    res = [ res_k0; res_i0; res_s0; res_l0; res; res_cT ];    
+    res = [ res_k0; res_i0; res_s0; res_l0; res; res_cT; res_kT ];    
     
 end

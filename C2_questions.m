@@ -5,8 +5,7 @@ T = 100;
 P.phi = 0;
 P.k0 = P.kss;
 P.i0 = 0.01;
-
-P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
+P.sss = 1;
 
 [c,k,i,s,l] = compute_path(P,T);
 

@@ -12,9 +12,9 @@ function [c,k,i,s,l] = compute_path(P,T)
     % guess for k0,...,k_T
     kguess = P.k0*ones(1,T+1);
     % guess for I0,...,I_T
-    iguess = 0*ones(1,T+1);
+    iguess = .5*ones(1,T+1);
     % guess for S0,...,S_T
-    sguess = 1*ones(1,T+1); 
+    sguess = .5*ones(1,T+1); 
     % guess for S0,...,S_T
     lguess = P.lss*ones(1,T+1); 
     % combine
@@ -24,9 +24,9 @@ function [c,k,i,s,l] = compute_path(P,T)
     
     % Jacobian pattern
     J = spdiags(ones(T+1,2),[-1,0],T+2,T+1); 
-    J = kron(J,ones(5));       % four variables now
+    J = kron(J,ones(5));       % five variables now
     % adjust boundaries
-    J = J(2:(end-4),:);        % 4 initial conditions, 1 terminal condition
+    J = J(2:(end-3),:);        % 3 initial conditions, 2 terminal condition
                                % => must delete first row and last 3 rows
     
     opts = optimoptions('fsolve','Algorithm','trust-region','JacobPattern',J,'display','none');
