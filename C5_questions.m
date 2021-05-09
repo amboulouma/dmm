@@ -1,7 +1,9 @@
-%% C5.
+%% C5. Assume that the minister of finance wants to use at most 1% of output for testing purposes, i.e gamma = 0.01.
+
+
 
 function P = C5_questions(P)
-% (a) 
+% C5(a) Plotting the equilibrium paths of consumption, capital and labor as functions of time.
 
 T = 200;
 P.k0 = P.kss;
@@ -15,7 +17,7 @@ P.gamma = 0.01;
 figure('Name','Lambda = 0.2, Gamma = 0.01: Economic time paths');
 plot_path(P,k,c,l,T);
 
-% (b)
+% C5(b) Plotting the time paths of infected and susceptible individuals.
 
 figure('Name','Lambda = 0.2, Gamma = 0.01: Economic time paths');
 subplot(2,1,1);
@@ -27,7 +29,8 @@ plot(0:T,s);
 title('share susceptible');
 xlabel('time');
 
-% (c)
+% C5(c) Plotting the time paths of the test price p_t, the testing intensity phi_t and the testing expenditure.
+% as share of output.
 
 %figure('Name','Lambda = 0.2, Gamma = 0.01: Phi and p');
 %subplot(2,1,1);
