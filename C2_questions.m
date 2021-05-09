@@ -1,4 +1,6 @@
-%% C2. No reaction to outbreak
+%% C2. Assume first that no testing is implemented,i.e. phi_t = 0 in all periods (which by B3 would be the optimal
+%% choice of the household). No reaction to outbreak
+
 function P = C2_questions(P)
 
 T = 200;
