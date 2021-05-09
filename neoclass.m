@@ -1,5 +1,5 @@
 % Master file for Project 1
-% Author: Martin Kerndler
+% Authors: Mohamed Amine Boulouma, Satyam Subhash
 
 clear all;
 %% 
@@ -17,16 +17,16 @@ P = pars(P);
 P = stst(P);
 
 % A3
-A3_SIR(P);
+%A3_SIR(P);
 
 %% C2. No reaction to outbreak
 C2_questions(P);
 
 %% C3. Containment measures linked to number of infected
-C3_questions(P);
+%C3_questions(P);
 
 %% C4. Containment measures linked to number of susceptibles
-C4_questions(P);
+%C4_questions(P);
 
 %% C5. Willingness to pay for a cure
 % C5_Analysis(P);
