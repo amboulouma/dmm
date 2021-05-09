@@ -1,23 +1,23 @@
 %% C3. 
 function P = C3_questions(P)
 
-T = 100;
+T = 200;
 P.k0 = P.kss;
 P.i0 = 0.01;
+% Fixed share of government
 P.phi = 1/3;
-
 P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 
 [c,k,i,s,l] = compute_path(P,T);
 
-% (a)
-figure('Name','No reaction: Trajectory plot');
+% C3(a) Equilibrium time paths of consumption, capital and labor relative to C2
+figure('Name','Phi = 1/3: Trajectory plot');
 plot_traj(P,k,c);
 
-figure('Name','No reaction: Economic time paths');
+figure('Name','Phi = 1/3: Economic time paths');
 plot_path(P,k,c,l,T);
 
-figure('Name','No reaction: Labor and Epidemic time paths');
+figure('Name','Phi = 1/3: Labor and Epidemic time paths');
 subplot(2,1,1);
 plot(0:T,i);
 title('share infected');
@@ -28,20 +28,20 @@ title('share susceptible');
 xlabel('time');
 
 
-% (b)
+% C3(b) Obtaining the equilibrium path and computing household utility
 
-T = 150;
+T = 200;
 P.phi = 1;
 P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 [c,k,i,s,l] = compute_path(P,T);
 
-figure('Name','No reaction: Trajectory plot');
+figure('Name','Phi = 1: Trajectory plot');
 plot_traj(P,k,c);
 
-figure('Name','No reaction: Economic time paths');
+figure('Name','Phi = 1: Economic time paths');
 plot_path(P,k,c,l,T);
 
-figure('Name','No reaction: Labor and Epidemic time paths');
+figure('Name','Phi = 1 : Labor and Epidemic time paths');
 subplot(2,1,1);
 plot(0:T,i);
 title('share infected');
@@ -51,13 +51,13 @@ plot(0:T,s);
 title('share susceptible');
 xlabel('time');
 
-ngrid = 100;
+ngrid = 200;
 phigrid = linspace(0,1,ngrid);
 Ugrid = nan(size(phigrid));
 for j=1:ngrid
     P.phi = phigrid(j);
     [c,k,i,s,l] = compute_path(P,T);
-    Ugrid(j) = sum(P.beta.^(0:T).*P.u(c)) + P.beta^(T+1)/(1-P.beta)*P.u(P.css);
+    Ugrid(j) = sum(P.beta.^(0:T).*P.u(c)) + ((P.beta^(T+1))/(1-P.beta))*P.u(P.css);
 end
 figure('Name','Household utility depending on phi');
 plot(phigrid,Ugrid);

@@ -1,39 +1,45 @@
-%% C4. 
+%% C4. Uncertainty about the willingness of symptomatic and identified asymtomatic individuals to reduce their contacts
 function P = C4_questions(P)
 
-T = 100;
+T = 200;
 P.k0 = P.kss;
 P.i0 = 0.01;
 
-% (a) analysis for lambda = 0.4
+% C4(a) Checking the robustness by analysis for lambda = 0.4
 P.lambda = 0.4;
 
 P.phi = 0;
 P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 [c,k,i,s,l] = compute_path(P,T);
 
-figure('Name','No reaction: Economic time paths');
+% Plotting and comparing the equilibrium time paths of consumption, capital and labor
+
+figure('Name','Phi = 0, Lambda = 0.4: Trajectory plot');
+plot_traj(P,k,c);
+figure('Name','Phi = 0, Lambda = 0.4: Economic time paths');
 plot_path(P,k,c,l,T);
 
 P.phi = 1/3;
 P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 [c,k,i,s,l] = compute_path(P,T);
 
-figure('Name','No reaction: Economic time paths');
+figure('Name','Phi = 1/3, Lambda = 0.4: Trajectory plot');
+plot_traj(P,k,c);
+figure('Name','Phi = 1/3, Lambda = 0.4: Economic time paths');
 plot_path(P,k,c,l,T);
 
-T = 150;
+T = 200;
 P.phi = 1;
 P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 [c,k,i,s,l] = compute_path(P,T);
 
-figure('Name','No reaction: Trajectory plot');
+figure('Name','Phi = 1, Lambda = 0.4: Trajectory plot');
 plot_traj(P,k,c);
 
-figure('Name','No reaction: Economic time paths');
+figure('Name','Phi = 1, Lambda = 0.4: Economic time paths');
 plot_path(P,k,c,l,T);
 
-figure('Name','No reaction: Labor and Epidemic time paths');
+figure('Name','Phi = 1, Lambda = 0.4: Labor and Epidemic time paths');
 subplot(2,1,1);
 plot(0:T,i);
 title('share infected');
@@ -51,7 +57,7 @@ for j=1:ngrid
     [c,k,i,s,l] = compute_path(P,T);
     Ugrid(j) = sum(P.beta.^(0:T).*P.u(c)) + P.beta^(T+1)/(1-P.beta)*P.u(P.css);
 end
-figure('Name','Household utility depending on phi');
+figure('Name','Household utility depending - phi from 0 to 1');
 plot(phigrid,Ugrid);
 xlabel('phi');
 ylabel('household utility U(c*)');
