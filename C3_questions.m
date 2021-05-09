@@ -4,6 +4,7 @@ function P = C3_questions(P)
 T = 200;
 P.k0 = P.kss;
 P.i0 = 0.01;
+% Fixed share of government
 P.phi = 1/3;
 P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 
