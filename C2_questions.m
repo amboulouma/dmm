@@ -9,10 +9,12 @@ P.sss = 1;
 
 [c,k,i,s,l] = compute_path(P,T);
 
+% (a) Plot of steady state and equilibrium path in (k,c)-plane
 % (a) plot in (k,c)-plane
 figure('Name','No reaction: Trajectory plot');
 plot_traj(P,k,c);
 
+% (b) Plot of equilibrium paths of Consumption, Capital and labor 
 % (b) plot time paths
 figure('Name','No reaction: Economic time paths');
 plot_path(P,k,c,l,T);
