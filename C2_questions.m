@@ -12,6 +12,7 @@ P.sss = 1;
 % (a) plot in (k,c)-plane
 figure('Name','No reaction: Trajectory plot');
 plot_traj(P,k,c);
+% filename: C2a1.png
 
 % (b) plot time paths
 figure('Name','No reaction: Economic time paths');
