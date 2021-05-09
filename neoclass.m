@@ -2,22 +2,20 @@
 % Authors: Mohamed Amine Boulouma, Satyam Subhash
 
 clear all;
-%% 
 close all;
 clc;
 
-% initialize P
+% initialize P structure
 P = struct();
 
-%% C1. Parameterization and calibration
-% directly set parameters
+%% Parameterization of the structure
 P = pars(P);
-
-% C1. Compute seady state
-P = stst(P);
 
 % A3
 % A3_SIR(P);
+
+% C1. Compute seady state
+P = stst(P);
 
 %% C2. No reaction to outbreak
 C2_questions(P);
