@@ -32,4 +32,9 @@ title('Labor');
 xlabel('time');
 ylim([0,1]);
 
+% (c)
+% short term(<20 periods):
+% medium-term effects (20–50 periods):
+% long-term ef- fects (>50 periods):
+
 end

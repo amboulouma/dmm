@@ -1,4 +1,4 @@
-function res = compute_residuals_phi(P,T,X)
+function [res, phi, p] = compute_residuals_phi_p(P,T,X)
     % computes residuals, H(X) from the slides
     % inputs: P ... parameters and steady state
     %         k0 ... initial capital
