@@ -10,7 +10,7 @@ P.sss = P.pi_r/P.pi_s*(P.lambda + (1 - P.lambda)*(1 - P.phi)*P.a)^(-1);
 
 [c,k,i,s,l] = compute_path(P,T);
 
-% (a)
+% C3(a) Equilibrium time paths of consumption, capital and labor relative to C2
 figure('Name','Phi = 1/3: Trajectory plot');
 plot_traj(P,k,c);
 
@@ -28,7 +28,7 @@ title('share susceptible');
 xlabel('time');
 
 
-% (b)
+% C3(b) Obtaining the equilibrium path and computing household utility
 
 T = 200;
 P.phi = 1;
