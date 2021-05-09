@@ -13,6 +13,15 @@ P = struct();
 % directly set parameters
 P = pars(P);
 
+% Steady states
+%   iss: 0
+%   lss: 1
+%   kss: 9.0946
+%   css: 1.3206
+%   wss: 1.3138
+%   rss: 0.0508
+%   sss: 1
+
 % C1. Compute seady state
 P = stst(P);
 
@@ -20,15 +29,15 @@ P = stst(P);
 % A3_SIR(P);
 
 %% C2. No reaction to outbreak
-C2_questions(P);
+% P = C2_questions(P);
 P
 
 %% C3. Containment measures linked to number of infected
-%C3_questions(P);
-
+% P = C3_questions(P);
+P
 %% C4. Containment measures linked to number of susceptibles
-%C4_questions(P);
-
+P = C4_questions(P);
+P
 %% C5. Willingness to pay for a cure
 % C5_Analysis(P);
 

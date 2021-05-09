@@ -1,7 +1,7 @@
 %% C2. No reaction to outbreak
 function P = C2_questions(P)
 
-T = 100;
+T = 200;
 P.phi = 0;
 P.k0 = P.kss;
 P.i0 = 0.01;
