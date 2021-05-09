@@ -14,6 +14,7 @@ P.sss = 1;
 % (a) plot in (k,c)-plane
 figure('Name','No reaction: Trajectory plot');
 plot_traj(P,k,c);
+% filename: C2a1.png
 
 % (b) plot time paths
 figure('Name','No reaction: Economic time paths');
@@ -43,4 +44,3 @@ ylim([0,1]);
 %                                    correction of labor to steady state, 
 %                                    correction of labor to steady state
 
-end
