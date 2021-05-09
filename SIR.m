@@ -1,3 +1,5 @@
+%% A2 Implementing the SIR model in Matlab with given parameters.
+
 function P = SIR(I0, S0, P, tmax, phi) 
 S=zeros(1,tmax);
 I=zeros(1,tmax);

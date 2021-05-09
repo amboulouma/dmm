@@ -2,7 +2,6 @@
 % Authors: Mohamed Amine Boulouma, Satyam Subhash
 
 clear all;
-%% 
 close all;
 clc;
 
@@ -26,21 +25,20 @@ P = pars(P);
 P = stst(P);
 
 % A3
-% A3_SIR(P);
+A3_SIR(P);
 
 %% C2. No reaction to outbreak
-% P = C2_questions(P);
-P
+C2_questions(P);
 
 %% C3. Containment measures linked to number of infected
-% P = C3_questions(P);
-P
-%% C4. Containment measures linked to number of susceptibles
-P = C4_questions(P);
-P
-%% C5. Willingness to pay for a cure
-% C5_Analysis(P);
+C3_questions(P);
 
+%% C4. Containment measures linked to number of susceptibles
+C4_questions(P);
+
+%% C5. Willingness to pay for a cure
+C5_questions(P);
 
 %% C6. Treatment available in period 15
-% C6_Analysis(P);
+C6_questions(P);
+
