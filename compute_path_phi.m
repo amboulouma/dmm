@@ -1,4 +1,4 @@
-function [c,k,i,s,l] = compute_path(P,T)
+function [c,k,i,s,l,phi,p] = compute_path_phi(P,T)
     % computes equilibrium path starting from (k0,I0)
     % inputs: P ... parameters and steady state
     %         T ... time periods for simulation
@@ -17,6 +17,7 @@ function [c,k,i,s,l] = compute_path(P,T)
     sguess = .5*ones(1,T+1); 
     % guess for S0,...,S_T
     lguess = P.lss*ones(1,T+1); 
+
     % combine
     xguess = [cguess; kguess; iguess; sguess; lguess];    
     % stack columns
@@ -30,7 +31,8 @@ function [c,k,i,s,l] = compute_path(P,T)
                                % => must delete first row and last 3 rows
     
     opts = optimoptions('fsolve','Algorithm','trust-region','JacobPattern',J,'display','none');
-    X = fsolve(@(X) compute_residuals(P,T,X), Xguess, opts);
+    X = fsolve(@(X) compute_residuals_phi_p(P,T,X), Xguess, opts);
+    [res, phi, p] = compute_residuals_phi_p(P,T,X)
     x = reshape(X,5,T+1);      % 5 variables 
     c = x(1,:);
     k = x(2,:); 
