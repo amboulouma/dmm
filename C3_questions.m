@@ -1,4 +1,6 @@
-%% C3. 
+%% C3.To gain some first insights into the effects of testing, you assume that tests are costless (p_t = 0) and that
+%% the government tests a fixed share phi_t = phi in every period.
+
 function P = C3_questions(P)
 
 T = 200;
